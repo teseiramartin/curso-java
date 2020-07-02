@@ -1,13 +1,22 @@
 package ar.gmm.mundopc;
 
-public class DispositivoEntrada {
+public abstract class DispositivoEntradaSalida {
     private String tipoEntrada;
     private String marca;
+    private double precio;
 
-    public DispositivoEntrada(){}
-    public DispositivoEntrada(String tipoEntrada, String marca){
+    public DispositivoEntradaSalida(){}
+    public DispositivoEntradaSalida(String tipoEntrada, String marca, double precio){
         this.tipoEntrada = tipoEntrada;
         this.marca = marca;
+        this.precio = precio;
+    }
+    public double getPrecio(){
+        return this.precio;
+    }
+
+    public void setPrecio(double precio){
+        this.precio = precio;
     }
 
     public String getMarca() {
@@ -20,9 +29,10 @@ public class DispositivoEntrada {
 
     @Override
     public String toString() {
-        return "DispositivoEntrada{" +
+        return "DispositivoEntradaSalida{" +
                 "tipoEntrada='" + tipoEntrada + '\'' +
                 ", marca='" + marca + '\'' +
+                ", precio=" + precio +
                 '}';
     }
 }

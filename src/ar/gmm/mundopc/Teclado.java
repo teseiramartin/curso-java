@@ -1,29 +1,18 @@
 package ar.gmm.mundopc;
 
-public class Teclado extends DispositivoEntrada{
+public class Teclado extends DispositivoEntradaSalida {
     private int idTeclado;
-    private double precio;
     private static int contadorTeclados;
 
     public Teclado(String tipoEntrada, String marca, double precio){
-        super(tipoEntrada,marca);
+        super(tipoEntrada,marca,precio);
         this.idTeclado = ++contadorTeclados;
-        this.precio = precio;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
     }
 
     @Override
     public String toString() {
         return super.toString() + "Teclado{" +
                 "idTeclado=" + idTeclado +
-                ", precio=" + precio +
                 '}';
     }
 }
